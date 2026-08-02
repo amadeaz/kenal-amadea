@@ -1,0 +1,449 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --text-secondary: #cbd5e1;
+    
+    /* Palette Warna Colorful */
+    --blue-color: #38bdf8;
+    --yellow-color: #facc15;
+    --red-color: #f43f5e;
+    
+    /* Gradient Ala Instagram / Social Media Frame */
+    --insta-gradient: linear-gradient(45deg, #facc15, #f43f5e, #38bdf8);
+}
+
+[data-theme="light"] {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-color: #0f172a;
+    --text-secondary: #475569;
+    
+    /* Sesuaikan warna aksen agar kontras & terbaca di background putih */
+    --blue-color: #0284c7;
+    --yellow-color: #d97706; /* Kuning yang lebih gelap/amber biar jelas terbaca */
+    --red-color: #e11d48;
+}
+
+/* FIX TELEPORT SMOOTH SCROLL PAS DI JUDUL */
+html {
+    scroll-behavior: smooth;
+}
+
+.section, .hero-section {
+    scroll-margin-top: 90px; /* Mencegah judul bab tertutup header saat diklik dari menu */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    position: sticky;
+    top: 0;
+    
+    /* Pakai variabel background agar ngikut mode terang/gelap */
+    background: rgba(248, 250, 252, 0.85); 
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 2px solid;
+    border-image: var(--insta-gradient) 1;
+}
+
+/* Tambahkan ini biar background header fleksibel */
+[data-theme="light"] header {
+    background: rgba(248, 250, 252, 0.9);
+}
+
+body:not([data-theme="light"]) header {
+    background: rgba(15, 23, 42, 0.85);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--yellow-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: var(--blue-color);
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+    color: var(--yellow-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 5rem 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+/* --- FRAME FOTO KOTAK ALA INSTAGRAM --- */
+.avatar-wrapper {
+    position: relative;
+    padding: 6px; /* Ketebalan Frame Instagram */
+    background: var(--insta-gradient);
+    border-radius: 24px; /* Kotak dengan sudut melengkung halus */
+    box-shadow: 0 10px 25px rgba(244, 63, 94, 0.3);
+}
+
+.avatar-wrapper img {
+    width: 200px;
+    height: 200px;
+    border-radius: 18px; /* Mengikuti lekukan frame */
+    object-fit: cover;
+    display: block;
+    background-color: var(--card-bg);
+}
+
+/* Aksesoris Username Ala Medsos di atas Foto */
+.social-tag {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    color: var(--yellow-color); /* Warna teks & logo mengikuti aksen UI */
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 2px solid var(--blue-color);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Jarak antara logo Instagram dan nama akun */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Efek saat tag difokuskan / di-hover */
+.social-tag i {
+    font-size: 1rem;
+    color: var(--red-color); /* Logo Instagram diberi warna merah aksen UI */
+}
+
+/* Teks & Aksesori Warna */
+.badge {
+    background: var(--red-color);
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.bio-text h1 {
+    font-size: 2.5rem;
+    margin-top: 0.8rem;
+}
+
+.highlight {
+    color: var(--blue-color);
+}
+
+.bio-details {
+    margin-top: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.bio-details p i {
+    margin-right: 8px;
+}
+
+.bio-details p:nth-child(1) i { color: var(--red-color); }
+.bio-details p:nth-child(2) i { color: var(--yellow-color); }
+
+/* Section Common */
+.section {
+    padding: 4rem 10%;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    color: var(--text-color);
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--insta-gradient);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* SECTION TENTANG AKU */
+.about-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-top: 4px solid var(--yellow-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.about-subtext {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Timeline Pendidikan (Colorful) */
+.timeline {
+    border-left: 3px solid var(--blue-color);
+    margin: 0 auto;
+    max-width: 600px;
+    padding-left: 1.5rem;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background: var(--yellow-color);
+    border: 3px solid var(--red-color);
+    border-radius: 50%;
+    position: absolute;
+    left: -2.25rem;
+    top: 5px;
+}
+
+.timeline-content {
+    background: var(--card-bg);
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--red-color);
+    /* BOX SHADOW BIAR KOTAKNYA LEBIH TIMBUL & KELIHATAN PEGAS */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek sedikit terangkat saat di-hover */
+.timeline-content:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.date {
+    font-size: 0.85rem;
+    color: var(--yellow-color);
+    font-weight: 600;
+}
+
+/* Filter Skills Button (Colorful) */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 2px solid var(--blue-color);
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filter-btn:nth-child(1).active { background: var(--blue-color); color: #000; }
+.filter-btn:nth-child(2).active { background: var(--yellow-color); border-color: var(--yellow-color); color: #000; }
+.filter-btn:nth-child(3).active { background: var(--red-color); border-color: var(--red-color); color: #fff; }
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    padding: 1.8rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--blue-color);
+}
+
+.skill-card:nth-child(2) {
+    border-top-color: var(--yellow-color);
+}
+
+.skill-card:nth-child(3) {
+    border-top-color: var(--red-color);
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-card:nth-child(1) .skill-icon { color: var(--blue-color); }
+.skill-card:nth-child(2) .skill-icon { color: var(--yellow-color); }
+.skill-card:nth-child(3) .skill-icon { color: var(--red-color); }
+
+/* FRAME FOTO POLAROID UNIK UNTUK DOKUMENTASI SKILL */
+.polaroid-frame {
+    background: #ffffff;
+    padding: 10px 10px 15px 10px;
+    border-radius: 6px;
+    margin-top: 1.5rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transform: rotate(-1.5deg); /* Efek miring ala foto polaroid */
+    transition: transform 0.3s ease;
+}
+
+.polaroid-frame .pin {
+    width: 12px;
+    height: 12px;
+    background: var(--red-color);
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.polaroid-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid-frame img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.polaroid-frame .caption {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--card-bg);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (Tampilan untuk HP & Tablet)
+   ========================================== */
+
+/* Untuk layar HP (Maksimal lebar 768px) */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Ubah Header/Navigasi agar tidak sesak */
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 5%;
+    }
+
+    nav ul {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* 2. Ubah Hero Section (Foto & Bio jadi menumpuk ke bawah) */
+    .hero-section {
+        padding: 3rem 5%;
+    }
+
+    .profile-container {
+        flex-direction: column; /* Foto di atas, teks di bawah */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .bio-text h1 {
+        font-size: 1.8rem; /* Ukuran judul lebih kecil di HP */
+    }
+
+    .bio-details p {
+        justify-content: center;
+    }
+
+    /* 3. Penyesuaian Padding Section */
+    .section {
+        padding: 3rem 5%;
+    }
+
+    /* 4. Tombol Filter Skill disesuaikan agar tidak offset */
+    .filter-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        padding: 6px 14px;
+        font-size: 0.85rem;
+    }
+}

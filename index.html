@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Biodata Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">My<span>Portfolio</span></div>
+        <nav>
+            <ul>
+                <li><a href="#about-me">Tentang Aku</a></li>
+                <li><a href="#education">Pendidikan</a></li>
+                <li><a href="#skills">Skill</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-btn"><i class="fa-solid fa-moon"></i></button>
+    </header>
+
+    <!-- Hero Section / Biodata Utama -->
+    <section id="about" class="hero-section">
+        <div class="profile-container">
+            <div class="avatar-wrapper">
+                <img src="foto-profil.png" alt="Foto Profile" id="profile-img">
+                <div class="social-tag"><i class="fa-brands fa-instagram"></i> @amadeaantikorosi</div>
+            </div>
+            <div class="bio-text">
+                <span class="badge">Selamat Datang!</span>
+                <h1><span id="full-name">Amadea Aulia Zahra</span></h1>
+                <h3>Panggil aku <span class="highlight" id="nickname">Amadea</span></h3>
+                <p class="typing-text">I am a <span id="typed"></span></p>
+                
+                <div class="bio-details">
+                    <p><i class="fa-solid fa-cake-candles"></i> <strong>Lahir:</strong> <span id="birth-info">Batu, 28 Februari 2011</span></p>
+                    <p><i class="fa-solid fa-location-dot"></i> <strong>Domisili:</strong> Jl. Rasemun No.43, Junrejo, Kota Batu, Jawa Timur</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TENTANG AKU -->
+    <section id="about-me" class="section">
+        <h2>Tentang Aku</h2>
+        <div class="about-card">
+            <p>
+                Hi guys! Aku Amadea, aku suka banget sama dunia teknologi seperti coding dan robotic. Eh iya aku tuh selalu pakai jam tangan warna-warni loh, kalau ketemu sapa aku yaa!
+            <p class="about-subtext">
+                <i>my mom said "Perlakukan Orang Lain Sebagaimana Kamu Ingin Diperlakukan"</i>
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Pendidikan -->
+    <section id="education" class="section">
+        <h2>Riwayat Pendidikan</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Sekolah Menengah Akhir</h3>
+                    <span class="date">2026 - Sekarang</span>
+                    <p>SMA Negeri 3 Malang</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Sekolah Menengah Pertama</h3>
+                    <span class="date">2023 - 2026</span>
+                    <p>SMP Negeri 1 Batu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Skills Interaktif & Dokumentasi Foto Polaroid -->
+    <section id="skills" class="section">
+        <h2>Keahlian & Minat</h2>
+        
+        <!-- Filter Button -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="robotic">Robotics</button>
+            <button class="filter-btn" data-filter="gamedev">Programming</button>
+        </div>
+
+        <div class="skills-grid">
+            <!-- Skill 1 -->
+            <div class="skill-card" data-category="robotic">
+                <div class="skill-head">
+                    <i class="fa-solid fa-robot skill-icon"></i>
+                    <h3>Robotics & Hardware</h3>
+                </div>
+                <p>Membuat project sederhana berbasis IoT menggunakan ESP32 dan Arduino.</p>
+                
+                <!-- Frame Polaroid Unik -->
+                <div class="polaroid-frame">
+                    <div class="pin"></div>
+                    <img src="robotik.jpeg" alt="Dokumentasi Robotics">
+                    <span class="caption">Dokumentasi Robotics 🤖</span>
+                </div>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="skill-card" data-category="gamedev">
+                <div class="skill-head">
+                    <i class="fa-solid fa-gamepad skill-icon"></i>
+                    <h3>Game Development</h3>
+                </div>
+                <p>Membuat game 2D sederhana menggunakan Godot Engine.</p>
+                
+                <!-- Frame Polaroid Unik -->
+                <div class="polaroid-frame">
+                    <div class="pin"></div>
+                    <img src="game.png" alt="Dokumentasi Game Dev">
+                    <span class="caption">Dokumentasi Game Dev 🎮</span>
+                </div>
+            </div>
+
+            <!-- Skill 3 -->
+            <div class="skill-card" data-category="gamedev">
+                <div class="skill-head">
+                    <i class="fa-solid fa-code skill-icon"></i>
+                    <h3>Web Programming</h3>
+                </div>
+                <p>Membuat website sederhana menggunakan HTML, CSS, dan JS.</p>
+                
+                <!-- Frame Polaroid Unik -->
+                <div class="polaroid-frame">
+                    <div class="pin"></div>
+                    <img src="web.png" alt="Dokumentasi Web Dev">
+                    <span class="caption">Dokumentasi Web Dev 💻</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Amadeaantikorosi.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
