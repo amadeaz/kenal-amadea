@@ -447,3 +447,23 @@ footer {
         font-size: 0.85rem;
     }
 }
+
+/* TAMBAHAN UNTUK HALAMAN TUGAS */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blue-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.btn-back:hover {
+    transform: translateX(-4px);
+}
+
+nav a.active-link {
+    color: var(--yellow-color);
+    border-bottom: 2px solid var(--yellow-color);
+}
